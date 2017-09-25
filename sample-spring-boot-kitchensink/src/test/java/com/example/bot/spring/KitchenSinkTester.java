@@ -63,27 +63,16 @@ public class KitchenSinkTester {
 	}
 	
 	@Test
-	public void testFound() throws Exception {
+	public void testFound1() throws Exception {
 		boolean thrown = false;
 		String result = null;
 		try {
-			result = this.databaseEngine.search("haha");
+			result = this.databaseEngine.search("How are you?");
 		} catch (Exception e) {
 			thrown = true;
 		}
 		assertThat(!thrown).isEqualTo(true);
-		assertThat(result).isEqualTo("hehe");
-	}
-	
-	@Test
-	public void testNotFound2() throws Exception {
-		boolean thrown = false;
-		try {
-			this.databaseEngine.search("...");
-		} catch (Exception e) {
-			thrown = true;
-		}
-		assertThat(thrown).isEqualTo(true);
+		assertThat(result).isEqualTo("I am fine!");
 	}
 	
 	@Test
@@ -91,11 +80,50 @@ public class KitchenSinkTester {
 		boolean thrown = false;
 		String result = null;
 		try {
-			result = this.databaseEngine.search("Hi");
+			result = this.databaseEngine.search("Have a nice dream.");
 		} catch (Exception e) {
 			thrown = true;
 		}
 		assertThat(!thrown).isEqualTo(true);
-		assertThat(result).isEqualTo("Hey, how things going?");
+		assertThat(result).isEqualTo("Good night!");
+	}
+	
+	@Test
+	public void testFound3() throws Exception {
+		boolean thrown = false;
+		String result = null;
+		try {
+			result = this.databaseEngine.search("What is your name?");
+		} catch (Exception e) {
+			thrown = true;
+		}
+		assertThat(!thrown).isEqualTo(true);
+		assertThat(result).isEqualTo("Felix");
+	}
+	
+	@Test
+	public void testFound4() throws Exception {
+		boolean thrown = false;
+		String result = null;
+		try {
+			result = this.databaseEngine.search("Where are you from?");
+		} catch (Exception e) {
+			thrown = true;
+		}
+		assertThat(!thrown).isEqualTo(true);
+		assertThat(result).isEqualTo("Hong Kong");
+	}
+	
+	@Test
+	public void testFound5() throws Exception {
+		boolean thrown = false;
+		String result = null;
+		try {
+			result = this.databaseEngine.search("Is HKUST great?");
+		} catch (Exception e) {
+			thrown = true;
+		}
+		assertThat(!thrown).isEqualTo(true);
+		assertThat(result).isEqualTo("Sure!");
 	}
 }
