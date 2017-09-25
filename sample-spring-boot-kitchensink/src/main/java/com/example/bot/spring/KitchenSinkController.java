@@ -314,9 +314,10 @@ public class KitchenSinkController {
 
 	
 
-
+	// change the constructor here
 	public KitchenSinkController() {
-		database = new DatabaseEngine();
+		//database = new DatabaseEngine();
+		database = new SQLDatabaseEngine();
 		itscLOGIN = System.getenv("ITSC_LOGIN");
 	}
 
